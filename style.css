@@ -1,0 +1,155 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.stopwatch {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.clock-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.clock {
+    margin-left: 90px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid;
+    position: relative;
+    animation: rotate 60s linear infinite; /* Change duration to 60 seconds */
+
+    /* Remove the border-image property */
+    /* border-image: linear-gradient(0deg, red, yellow, green, cyan, blue, magenta, red) 1; */
+}
+
+@keyframes rotate {
+    0% {
+        border-color: red;
+    }
+    14.28% {
+        border-color: yellow;
+    }
+    28.57% {
+        border-color: green;
+    }
+    42.85% {
+        border-color: cyan;
+    }
+    57.14% {
+        border-color: blue;
+    }
+    71.42% {
+        border-color: magenta;
+    }
+    85.71% {
+        border-color: red;
+    }
+    100% {
+        border-color: yellow;
+    }
+}
+
+
+.hand {
+    rotate: 90deg;
+    position: absolute;
+    width: 50%;
+    background-color: #333;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+}
+
+.hour {
+    height: 4px;
+}
+
+.minute {
+    height: 3px;
+}
+
+.second {
+    height: 2px;
+    background-color: red;
+}
+
+#display {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+.buttons button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background: #008CBA;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buttons button:hover {
+    background: #005f7f;
+}
+
+.laps-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#laps {
+    list-style-type: none;
+    padding: 0;
+}
+
+#laps li {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Circuit Design Styling */
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('circuit-design.png') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
